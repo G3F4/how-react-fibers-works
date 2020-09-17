@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/how-react-fibers-wokrs/precache-manifest.d77b46f61252d394631a773a68651e40.js"
+  "/how-react-fibers-works/precache-manifest.e8718b6729bef4842444919da46f4e0a.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/how-react-fibers-wokrs/index.html", {
+workbox.routing.registerNavigationRoute("/how-react-fibers-works/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
