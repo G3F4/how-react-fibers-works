@@ -34,6 +34,63 @@ export default function Presentation() {
         </Text>
       </Slide>
 
+      <Slide bgColor="primary" transition={['fade']}>
+        <Heading fit caps lineHeight={1} size={1} textColor="secondary">
+          First of all, what is React
+        </Heading>
+      </Slide>
+
+      <Slide bgColor="primary" transition={['fade']}>
+        <Heading fit caps lineHeight={1} size={1} textColor="secondary">
+          Next, how React does UI
+        </Heading>
+      </Slide>
+
+      <Slide bgColor="primary" transition={['fade']}>
+        <Heading fit caps lineHeight={1} size={1} textColor="secondary">
+          and how React handles state
+        </Heading>
+      </Slide>
+
+      <Slide bgColor="primary" transition={['fade']}>
+        <Heading fit caps lineHeight={1} size={1} textColor="secondary">
+          But what is JSX
+        </Heading>
+      </Slide>
+
+      <Slide bgColor="primary" transition={['fade']}>
+        <Heading fit caps lineHeight={1} size={1} textColor="secondary">
+          Now, what those React elements are
+        </Heading>
+      </Slide>
+
+      <Slide bgColor="primary" transition={['fade']}>
+        <Heading fit caps lineHeight={1} size={1} textColor="secondary">
+          Is it all we need?
+        </Heading>
+      </Slide>
+
+      <Slide bgColor="primary" transition={['fade']}>
+        <Heading fit caps lineHeight={1} size={1} textColor="secondary">
+          And now we start story about
+        </Heading>
+        <Heading fit caps lineHeight={1} size={1} textColor="secondary">
+          React Fibers
+        </Heading>
+      </Slide>
+
+      <Slide bgColor="primary" transition={['fade']}>
+        <Heading fit caps lineHeight={1} size={1} textColor="secondary">
+          Simply
+        </Heading>
+        <Heading fit caps lineHeight={1} size={1} textColor="secondary">
+          It is just another way
+        </Heading>
+        <Heading fit caps lineHeight={1} size={1} textColor="secondary">
+          To abstract DOM with state
+        </Heading>
+      </Slide>
+
       <Slide bgColor="tertiary" textColor="tertiary" transition={['fade']}>
         <Heading fit caps size={2} textColor="secondary">Thank You!</Heading>
       </Slide>
