@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "c5fc434fd0000d370c4b",
+    "revision": "85c01ac6a12223ef99c1",
     "url": "/how-react-fibers-works/static/css/main.fd763bfe.chunk.css"
   },
   {
-    "revision": "c5fc434fd0000d370c4b",
-    "url": "/how-react-fibers-works/static/js/main.c5fc434f.chunk.js"
+    "revision": "85c01ac6a12223ef99c1",
+    "url": "/how-react-fibers-works/static/js/main.85c01ac6.chunk.js"
   },
   {
     "revision": "b9c41890fca0fef4285c",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/how-react-fibers-works/static/js/runtime~main.1b983a7f.js"
   },
   {
-    "revision": "9102d5a848910c8affba302e52189c83",
+    "revision": "c04a446c078e5ec54edf0b69a13deb6b",
     "url": "/how-react-fibers-works/index.html"
   }
 ];
