@@ -1,24 +1,27 @@
 {
   "name": "how-react-fibers-wokrs",
   "version": "0.1.0",
-  "homepage": "https://g3f4-xyz.github.io/how-react-fibers-wokrs/",
+  "homepage": "https://g3f4.github.io/how-react-fibers-works",
   "dependencies": {
-    "@types/jest": "24.0.23",
-    "@types/node": "12.12.8",
-    "@types/react": "16.9.11",
-    "@types/react-dom": "16.9.4",
-    "eslint-plugin-jest": "23.1.1",
+    "@types/jest": "26.0.14",
+    "@types/node": "14.11.1",
+    "@types/react": "16.9.49",
+    "@types/react-dom": "16.9.8",
+    "eslint-plugin-jest": "24.0.1",
+    "gh-pages": "3.1.0",
     "normalize.css": "8.0.1",
-    "react": "16.12.0",
-    "react-dom": "16.12.0",
-    "spectacle": "5.7.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "spectacle": "5.8.0",
     "spectacle-scripts": "2.4.0",
-    "typescript": "3.7.2"
+    "typescript": "4.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "lint": "eslint './src/**/*.{ts,tsx}'",
     "lint:fix": "eslint './src/**/*.{ts,tsx}' --fix",
     "eject": "react-scripts eject"

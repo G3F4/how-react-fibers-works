@@ -19,16 +19,20 @@ const theme = createTheme(
 );
 
 const images = {
-  gears: '/images/gears.svg',
-  reactLogo: '/images/reactLogo.png',
-  blocks: '/images/blocks.svg',
-  binaryState: '/images/binaryState.svg',
-  magic: '/images/magic.svg',
-  atoms: '/images/atoms.svg',
-  alice: '/images/alice.svg',
-  fibersWork: '/images/fibersWork.gif',
-  simply: '/images/simply.svg',
-  theEnd: '/images/theEnd.svg',
+  gears: 'images/gears.svg',
+  reactLogo: 'images/reactLogo.png',
+  blocks: 'images/blocks.svg',
+  binaryState: 'images/binaryState.svg',
+  magic: 'images/magic.svg',
+  atoms: 'images/atoms.svg',
+  alice: 'images/alice.svg',
+  fibersWork: 'images/fibersWork.gif',
+  simply: 'images/simply.svg',
+  theEnd: 'images/theEnd.svg',
+}
+
+function getImage(name: keyof typeof images) {
+  return images[name];
 }
 
 export default function Presentation() {
@@ -39,7 +43,7 @@ export default function Presentation() {
       contentWidth="90%"
       contentHeight="90%"
     >
-      <Slide bgColor="primary" transition={['fade']} bgImage={images.gears}>
+      <Slide bgColor="primary" transition={['fade']} bgImage={getImage('gears')}>
         <Text bold caps textSize="100" textColor="secondary">
           How
         </Text>
@@ -55,7 +59,7 @@ export default function Presentation() {
         </Text>
       </Slide>
 
-      <Slide bgColor="primary" transition={['fade']} bgImage={images.reactLogo}>
+      <Slide bgColor="primary" transition={['fade']} bgImage={getImage('reactLogo')}>
         <Text bold caps textSize="100" textColor="secondary">
           First of all
         </Text>
@@ -64,7 +68,7 @@ export default function Presentation() {
         </Heading>
       </Slide>
 
-      <Slide bgColor="primary" transition={['fade']} bgImage={images.blocks}>
+      <Slide bgColor="primary" transition={['fade']} bgImage={getImage('blocks')}>
         <Text bold caps textSize="100" textColor="secondary">
           Next
         </Text>
@@ -76,7 +80,7 @@ export default function Presentation() {
         </Heading>
       </Slide>
 
-      <Slide bgColor="primary" transition={['fade']} bgImage={images.binaryState}>
+      <Slide bgColor="primary" transition={['fade']} bgImage={getImage('binaryState')}>
         <Text bold caps textSize="100" textColor="secondary">
           and how
         </Text>
@@ -85,7 +89,7 @@ export default function Presentation() {
         </Heading>
       </Slide>
 
-      <Slide bgColor="primary" transition={['fade']} bgImage={images.magic}>
+      <Slide bgColor="primary" transition={['fade']} bgImage={getImage('magic')}>
         <Heading fit caps lineHeight={1} size={1} textColor="secondary">
           But what is this
         </Heading>
@@ -94,7 +98,7 @@ export default function Presentation() {
         </Heading>
       </Slide>
 
-      <Slide bgColor="primary" transition={['fade']} bgImage={images.atoms}>
+      <Slide bgColor="primary" transition={['fade']} bgImage={getImage('atoms')}>
         <Text bold caps fit textColor="secondary">
           Now what are those
         </Text>
@@ -103,7 +107,7 @@ export default function Presentation() {
         </Heading>
       </Slide>
 
-      <Slide bgColor="primary" transition={['fade']} bgImage={images.alice}>
+      <Slide bgColor="primary" transition={['fade']} bgImage={getImage('alice')}>
         <Text bold caps fit textColor="secondary">
           And now we start story about
         </Text>
@@ -123,7 +127,7 @@ export default function Presentation() {
 
       </Slide>
 
-      <Slide bgColor="primary" transition={['fade']} bgImage={images.simply}>
+      <Slide bgColor="primary" transition={['fade']} bgImage={getImage('simply')}>
         <Heading fit caps lineHeight={1} size={1} textColor="secondary">
           Simply
         </Heading>
@@ -135,7 +139,8 @@ export default function Presentation() {
         </Heading>
       </Slide>
 
-      <Slide textColor="tertiary" transition={['fade']} bgImage={images.theEnd}>
+      <Slide textColor="tertiary" transition={['fade']} bgImage={getImage('theEnd')}>
+        The end
       </Slide>
     </Deck>
   );
