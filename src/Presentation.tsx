@@ -139,7 +139,7 @@ export default function Presentation() {
 
       <Slide bgColor="primary" transition={['fade']} bgImage={getImage('binaryState')}>
         <Text bold caps textSize="100" textColor="secondary">
-          and how
+          Ok, but how
         </Text>
         <Heading fit caps lineHeight={1} size={1} textColor="secondary">
           React handles state
@@ -189,6 +189,12 @@ export default function Presentation() {
         </Text>
       </Slide>
 
+      <Slide bgColor="primary" transition={['fade']} bgImage={getImage('alice')}>
+        <Text bold caps fit textColor="secondary">
+          Jakiś rysunek Fibera
+        </Text>
+      </Slide>
+
       <Slide bgColor="primary" transition={['fade']} bgImage={getImage('reactLogo')}>
         <Heading fit caps lineHeight={1} size={1} textColor="secondary">
           React Fibers structure
@@ -215,22 +221,13 @@ export default function Presentation() {
           Simply
         </Heading>
         <Heading fit caps lineHeight={1} size={1} textColor="secondary">
-          React Fibers are
-        </Heading>
-        <Heading fit caps lineHeight={1} size={1} textColor="secondary">
-          way to describe work
-        </Heading>
-        <Heading fit caps lineHeight={1} size={1} textColor="secondary">
-          which needs to be done on React Element
+          Fibers == Work
         </Heading>
       </Slide>
 
       <Slide bgColor="primary" transition={['fade']} bgImage={getImage('alice')}>
-        <Text bold caps textColor="secondary">
-          What is
-        </Text>
         <Text bold caps fit textColor="secondary">
-          the simplest
+          Simplest
         </Text>
         <Text bold caps fit textColor="secondary">
           React application?
@@ -257,12 +254,9 @@ export default function Presentation() {
         <Text bold caps fit textColor="secondary">
           visualize it?
         </Text>
-      </Slide>
-
-      <Slide bgColor="primary" transition={['fade']} bgImage={getImage('alice')}>
         <Link href="https://g3f4.github.io/build-own-react-workshop?scenario=simplest">
           <Text bold caps fit textColor="secondary">
-            Simplest React App visualized link
+            Visualization link
           </Text>
         </Link>
       </Slide>
@@ -271,12 +265,20 @@ export default function Presentation() {
         <Text bold caps fit textColor="secondary">
           Ok, now React app with state
         </Text>
+        <Link href="https://g3f4.github.io/build-own-react-workshop?scenario=withState">
+          <Text bold caps fit textColor="secondary">
+            Visualization link
+          </Text>
+        </Link>
       </Slide>
 
       <Slide bgColor="primary" transition={['fade']} bgImage={getImage('alice')}>
-        <Link href="https://g3f4.github.io/build-own-react-workshop">
+        <Text bold caps fit textColor="secondary">
+          lastly, React app with Function Component
+        </Text>
+        <Link href="https://g3f4.github.io/build-own-react-workshop?scenario=withState">
           <Text bold caps fit textColor="secondary">
-            React app with state visualized link
+            Visualization link
           </Text>
         </Link>
       </Slide>
