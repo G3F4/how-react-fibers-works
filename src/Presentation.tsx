@@ -275,9 +275,12 @@ export default function Presentation() {
 
       <Slide bgColor="primary" transition={['fade']} bgImage={getImage('alice')}>
         <Text bold caps fit textColor="secondary">
-          Ok, now React app with state
+          Ok, now React app with ...
         </Text>
-        <Link href="https://g3f4.github.io/build-own-react-workshop?scenario=withState">
+        <Text bold caps fit textColor="secondary">
+          FUNCTIONAL COMPONENT!
+        </Text>
+        <Link href="https://g3f4.github.io/build-own-react-workshop?scenario=withComponent">
           <Text bold caps fit textColor="secondary">
             Visualization link
           </Text>
@@ -288,7 +291,7 @@ export default function Presentation() {
         <Text bold caps fit textColor="secondary">
           lastly, React app with Function Component
         </Text>
-        <Link href="https://g3f4.github.io/build-own-react-workshop?scenario=withState">
+        <Link href="https://g3f4.github.io/build-own-react-workshop">
           <Text bold caps fit textColor="secondary">
             Visualization link
           </Text>
