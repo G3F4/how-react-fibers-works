@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { CodePane, Deck, Heading, Image, Slide, Text, Link, List, ListItem } from 'spectacle';
 import createTheme from 'spectacle/lib/themes/default';
 
@@ -34,6 +34,23 @@ const images = {
 function getImage(name: keyof typeof images) {
   return images[name];
 }
+const spaceChar = '\u00A0';
+function FixedFitText({ children, length, center = false }: { children: string; length: number; center?: boolean }) {
+  const emptyCharsMargin = Math.floor((length - children.length) / 2);
+  const text = emptyCharsMargin > 0
+    ? (
+      center
+        ? spaceChar.repeat(emptyCharsMargin) + children + spaceChar.repeat(emptyCharsMargin)
+        : children + spaceChar.repeat(length - children.length)
+    )
+    : children;
+
+  return (
+    <Text bold caps fit textColor="secondary">
+      {text}
+    </Text>
+  );
+}
 
 export default function Presentation() {
   return (
@@ -44,23 +61,21 @@ export default function Presentation() {
       contentHeight="90%"
     >
       <Slide bgColor="primary" transition={['fade']} bgImage={getImage('gears')}>
-        <Text bold caps textSize="100" textColor="secondary">
-          How
-        </Text>
-        <Heading fit caps lineHeight={1.5} textColor="secondary">
-          React Fibers
-        </Heading>
-        <Text bold caps textSize="100" textColor="secondary">
-          works
-        </Text>
-        <br/>
         <Text bold fit textColor="secondary">
           Deep dive into React internals
         </Text>
+        <FixedFitText length={10} center>How</FixedFitText>
+        <Heading fit caps textColor="secondary">
+          React Fibers
+        </Heading>
+        <Text bold caps fit textColor="secondary">
+          works
+        </Text>
+        <br/>
       </Slide>
 
       <Slide bgColor="primary" transition={['fade']} bgImage={getImage('reactLogo')}>
-        <Text bold caps textSize="100" textColor="secondary">
+        <Text bold caps fit textColor="secondary">
           First of all
         </Text>
         <Heading fit caps lineHeight={1.5} textColor="secondary">
@@ -69,13 +84,15 @@ export default function Presentation() {
       </Slide>
 
       <Slide bgColor="primary" transition={['fade']} bgImage={getImage('reactLogo')}>
-        <List>
-          <ListItem bold>Library for building UI Components</ListItem>
-          <ListItem bold>@Facebook open source since 201x</ListItem>
-          <ListItem bold>Abstract UI with JS objects (React Elements)</ListItem>
-          <ListItem bold>Simplifies state management (Components with state)</ListItem>
-          <ListItem bold>Event handling and much more</ListItem>
-        </List>
+        <FixedFitText length={55}>Library for building UI Components</FixedFitText>
+        <br/>
+        <FixedFitText length={55}>@Facebook open source since 201x</FixedFitText>
+        <br/>
+        <FixedFitText length={55}>Abstract UI with JS objects (React Elements)</FixedFitText>
+        <br/>
+        <FixedFitText length={55}>Simplifies state management (Components with state)</FixedFitText>
+        <br/>
+        <FixedFitText length={55}>Event handling and much more</FixedFitText>
       </Slide>
 
       <Slide bgColor="primary" transition={['fade']} bgImage={getImage('blocks')}>
@@ -91,12 +108,10 @@ export default function Presentation() {
         <Heading fit caps lineHeight={1} size={1} textColor="secondary">
           Meet JSX
         </Heading>
-        <CodePane lang="javascript" theme="light" style={{ fontSize: 36 }} source={`
-  <div>
-    <h1>Application header</h1>
-    <CustomComponent str="abc" num={2} flag />
-  </div>
-          `}
+        <CodePane lang="javascript" theme="light" style={{ fontSize: 32 }} source={` <div>
+   <h1>Application header</h1>
+   <CustomComponent str="abc" num={2} flag />
+ </div>`}
         />
       </Slide>
 
@@ -113,18 +128,17 @@ export default function Presentation() {
         <Text bold caps fit textColor="secondary">
           After @babel'ing code
         </Text>
-        <CodePane lang="javascript" theme="light" style={{ fontSize: 36 }} source={`  createElement('div', {
-    children: [
-      createElement(
-        'h1',
-        { text: 'Application header' }
-      ),
-      createElement(
-        CustomComponent, 
-        { str: 'abc', num: 2, flag: true })
-    ]
-  });
-          `}
+        <CodePane lang="javascript" theme="light" style={{ fontSize: 28 }} source={` createElement('div', {
+   children: [
+     createElement(
+       'h1',
+       { text: 'Application header' }
+     ),
+     createElement(
+       CustomComponent, 
+       { str: 'abc', num: 2, flag: true })
+   ]
+ });`}
         />
       </Slide>
 
@@ -138,7 +152,7 @@ export default function Presentation() {
       </Slide>
 
       <Slide bgColor="primary" transition={['fade']} bgImage={getImage('binaryState')}>
-        <Text bold caps textSize="100" textColor="secondary">
+        <Text bold caps fit textColor="secondary">
           Ok, but how
         </Text>
         <Heading fit caps lineHeight={1} size={1} textColor="secondary">
@@ -150,17 +164,18 @@ export default function Presentation() {
         <Heading fit caps lineHeight={1} size={1} textColor="secondary">
           Function component with state
         </Heading>
-        <CodePane lang="javascript" theme="light" style={{ fontSize: 32 }} source={`
-  function Counter({ initialValue = 0 }) {
-    const [counter, setCounter] = useState(initialValue)
-    const increase = () => { setCounter(v => v + 1) }
-    return (
-      <div>
-        <span>{counter}</span>
-        <button onClick={increase}>+</button>
-      </div>
-    )
-  }`}
+        <br />
+        <CodePane lang="javascript" theme="light" style={{ fontSize: 24 }} source={` function Counter({ initialValue = 0 }) {
+   const [counter, setCounter] = useState(initialValue)
+   const increase = () => { setCounter(v => v + 1) }
+   return (
+     <div>
+       <span>{counter}</span>
+       <button onClick={increase}>+</button>
+     </div>
+   )
+ }`
+        }
         />
       </Slide>
 
@@ -199,20 +214,18 @@ export default function Presentation() {
         <Heading fit caps lineHeight={1} size={1} textColor="secondary">
           React Fibers structure
         </Heading>
-        <CodePane lang="typescript" theme="light" style={{ fontSize: 32 }} source={`
-  interface Fiber {
-    tag: FunctionComponent | HostComponent | ...
-    type: Function | string;
-    stateNode: HTMLElement | null;
-    pendingProps: Props;
-    memoizedState: any;
-    return: Fiber | null;
-    sibling: Fiber | null;
-    child: Fiber | null;
-    alternate: Fiber | null;
-    effectTag: EffectTag;
-  }
-        `}
+        <CodePane lang="typescript" theme="light" style={{ fontSize: 28 }} source={` interface Fiber {
+   tag: FunctionComponent | HostComponent | ...
+   type: Function | string;
+   stateNode: HTMLElement | null;
+   pendingProps: Props;
+   memoizedState: any;
+   return: Fiber | null;
+   sibling: Fiber | null;
+   child: Fiber | null;
+   alternate: Fiber | null;
+   effectTag: EffectTag;
+ }`}
         />
       </Slide>
 
@@ -221,7 +234,7 @@ export default function Presentation() {
           Simply
         </Heading>
         <Heading fit caps lineHeight={1} size={1} textColor="secondary">
-          Fibers == Work
+          Fibers = Work
         </Heading>
       </Slide>
 
@@ -238,12 +251,11 @@ export default function Presentation() {
         <Heading fit caps lineHeight={1} size={1} textColor="secondary">
           Simplest React app
         </Heading>
-        <CodePane lang="javascript" theme="light" style={{ fontSize: 36 }} source={`
-  ReactDOM.render(
-    <span>Simplest React App</span>,
-    document.getElementById('root'),
-  );
-          `}
+        <br />
+        <CodePane lang="javascript" theme="light" style={{ fontSize: 36 }} source={` ReactDOM.render(
+   <span>Simplest React App</span>,
+   document.getElementById('root'),
+ );`}
         />
       </Slide>
 
@@ -293,16 +305,14 @@ export default function Presentation() {
       </Slide>
 
       <Slide bgColor="primary" transition={['fade']} bgImage={getImage('reactLogo')}>
-        <Heading caps textColor="secondary">
+        <Heading caps fit textColor="secondary">
           Cool links
         </Heading>
-        <List>
-          <ListItem>https://pomb.us/build-your-own-react</ListItem>
-          <ListItem>https://indepth.dev/inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react</ListItem>
-          <ListItem>https://github.com/G3F4/how-react-fibers-works</ListItem>
-          <ListItem>https://github.com/G3F4/build-own-react-workshop</ListItem>
-          <ListItem>https://dev.to/ameerthehacker/build-your-own-react-in-90-lines-of-javascript-1je2</ListItem>
-        </List>
+        <Text fit>https://pomb.us/build-your-own-react</Text>
+        <Text fit>https://indepth.dev/inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react</Text>
+        <Text fit>https://github.com/G3F4/how-react-fibers-works</Text>
+        <Text fit>https://github.com/G3F4/build-own-react-workshop</Text>
+        <Text fit>https://dev.to/ameerthehacker/build-your-own-react-in-90-lines-of-javascript-1je2</Text>
       </Slide>
 
       <Slide textColor="tertiary" transition={['fade']} bgImage={getImage('theEnd')}>
