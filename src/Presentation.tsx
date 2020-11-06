@@ -31,6 +31,8 @@ const images = {
   theEnd: 'images/theEnd.svg',
   heart: 'images/heart.png',
   eye: 'images/eye.svg',
+  fiber: 'images/fiber.svg',
+  fibers: 'images/fibers.png',
 };
 
 function getImage(name: keyof typeof images) {
@@ -209,10 +211,7 @@ export default function Presentation() {
         </Text>
       </Slide>
 
-      <Slide bgColor="primary" transition={['fade']} bgImage={getImage('alice')}>
-        <Text bold caps fit textColor="secondary">
-          Jakiś rysunek Fibera
-        </Text>
+      <Slide textColor="tertiary" transition={['fade']} bgImage={getImage('fibers')}>
       </Slide>
 
       <Slide bgColor="primary" transition={['fade']} bgImage={getImage('reactLogo')}>
