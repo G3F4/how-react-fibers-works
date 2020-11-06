@@ -29,6 +29,8 @@ const images = {
   fibersWork: 'images/fibersWork.gif',
   simply: 'images/simply.svg',
   theEnd: 'images/theEnd.svg',
+  heart: 'images/heart.png',
+  eye: 'images/eye.svg',
 };
 
 function getImage(name: keyof typeof images) {
@@ -186,6 +188,9 @@ export default function Presentation() {
         <Heading fit caps lineHeight={1} size={1} textColor="secondary">
           React Fibers
         </Heading>
+        <Text bold caps fit textColor="secondary">
+          Enter rabbit hole!
+        </Text>
       </Slide>
 
       <Slide bgColor="primary" transition={['fade']} bgImage={getImage('alice')}>
@@ -238,7 +243,7 @@ export default function Presentation() {
         </Heading>
       </Slide>
 
-      <Slide bgColor="primary" transition={['fade']} bgImage={getImage('alice')}>
+      <Slide bgColor="primary" transition={['fade']} bgImage={getImage('reactLogo')}>
         <Text bold caps fit textColor="secondary">
           Simplest
         </Text>
@@ -259,7 +264,7 @@ export default function Presentation() {
         />
       </Slide>
 
-      <Slide bgColor="primary" transition={['fade']} bgImage={getImage('alice')}>
+      <Slide bgColor="primary" transition={['fade']} bgImage={getImage('eye')}>
         <Text bold caps fit textColor="secondary">
           And how we can
         </Text>
@@ -273,7 +278,7 @@ export default function Presentation() {
         </Link>
       </Slide>
 
-      <Slide bgColor="primary" transition={['fade']} bgImage={getImage('alice')}>
+      <Slide bgColor="primary" transition={['fade']} bgImage={getImage('eye')}>
         <Text bold caps fit textColor="secondary">
           Ok, now React app with ...
         </Text>
@@ -287,7 +292,7 @@ export default function Presentation() {
         </Link>
       </Slide>
 
-      <Slide bgColor="primary" transition={['fade']} bgImage={getImage('alice')}>
+      <Slide bgColor="primary" transition={['fade']} bgImage={getImage('eye')}>
         <Text bold caps fit textColor="secondary">
           lastly, React app with Function Component
         </Text>
@@ -298,7 +303,7 @@ export default function Presentation() {
         </Link>
       </Slide>
 
-      <Slide bgColor="primary" transition={['fade']} bgImage={getImage('alice')}>
+      <Slide bgColor="primary" transition={['fade']} bgImage={getImage('simply')}>
         <Text bold caps fit textColor="secondary">
           And that is how
         </Text>
@@ -318,7 +323,11 @@ export default function Presentation() {
         <Text fit>https://dev.to/ameerthehacker/build-your-own-react-in-90-lines-of-javascript-1je2</Text>
       </Slide>
 
-      <Slide textColor="tertiary" transition={['fade']} bgImage={getImage('theEnd')}>
+      <Slide textColor="tertiary" transition={['fade']}>
+        <Heading fit caps size={2} textColor="secondary">
+          Thank You!
+        </Heading>
+        <Image src={images.heart} width="33%" />
       </Slide>
     </Deck>
   );
